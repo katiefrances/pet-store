@@ -1,0 +1,19 @@
+
+<h1>Stores#index</h1>
+    <table>
+            <thead>
+                <th> Store Name</th>
+                <th>Location </th>
+                </tr>
+            </thead>
+
+
+            <tbody>
+            <% @stores.each do |store| %>
+                <tr> 
+                    <td><%= store[0]%></td>
+                    <td><%= store[1]%></td>
+                </tr>
+            <% end %>
+            </tbody>
+    </table>
