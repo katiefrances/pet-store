@@ -4,8 +4,16 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    if params[:sku] then
+      @products = Product.where(sku: params[:sku])
+    elsif params[:price] then
+      @products = Product. where "price > ?", params[:price]
+      elsif params[:name] then     
+         @products = Product.where "name like ?", "%#{params[:name]}%"
+    else
+       @products = Product.all
   end
+end
 
   # GET /products/1
   # GET /products/1.json
